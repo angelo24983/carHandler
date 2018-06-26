@@ -1,13 +1,3 @@
-<div *ngIf="selectedDuty">
-  <h2>{{ selectedDuty.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedDuty.id}}</div>
-  <div>
-      <label>name:
-        <input [(ngModel)]="selectedDuty.name" placeholder="name">
-      </label>
-  </div>
-</div>
-
 <h2>My Duties</h2>
 <ul class="duties">
   <li *ngFor="let duty of duties"
@@ -16,3 +6,5 @@
     <span class="badge">{{duty.id}}</span> {{duty.name}}
   </li>
 </ul>
+
+<app-duty-detail [duty]="selectedDuty"></app-duty-detail>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Duty } from '../shared/duty';
 import { DUTIES } from '../shared/mock-duties';
+import { DutyService } from '../duty.service';
 
 @Component({
   selector: 'app-duties',
@@ -10,13 +11,19 @@ import { DUTIES } from '../shared/mock-duties';
 export class DutiesComponent implements OnInit {
 
   duty = new Duty(1, 'Assicurazione');
-  duties = DUTIES;
+  duties: Duty[];
 
   selectedDuty: Duty;
 
-  constructor() { }
+  constructor(private dutyService: DutyService) { }
 
   ngOnInit() {
+    this.getDuties();
+  }
+
+  getDuties(): void {
+    this.dutyService.getDuties()
+    .subscribe(duties => this.duties=duties);
   }
 
   onSelect(duty: Duty): void {
