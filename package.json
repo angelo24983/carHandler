@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy-github-pages": "ng build --prod --base-href https://angelo24983.github.io/carHandler && angular-cli-ghpages --dir dist/carHandler"
   },
   "private": true,
   "dependencies": {
