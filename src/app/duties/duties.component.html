@@ -1,7 +1,18 @@
-<h2>{{ duty.name | uppercase }} Details</h2>
-<div><span>id: </span>{{duty.id}}</div>
-<div>
-    <label>name:
-      <input [(ngModel)]="duty.name" placeholder="name">
-    </label>
+<div *ngIf="selectedDuty">
+  <h2>{{ selectedDuty.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedDuty.id}}</div>
+  <div>
+      <label>name:
+        <input [(ngModel)]="selectedDuty.name" placeholder="name">
+      </label>
+  </div>
 </div>
+
+<h2>My Duties</h2>
+<ul class="duties">
+  <li *ngFor="let duty of duties"
+    [class.selected]="duty === selectedDuty"
+    (click)="onSelect(duty)">
+    <span class="badge">{{duty.id}}</span> {{duty.name}}
+  </li>
+</ul>
