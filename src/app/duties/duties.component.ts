@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Duty } from '../shared/duty';
-import { DUTIES } from '../shared/mock-duties';
 import { DutyService } from '../duty.service';
 
 @Component({

@@ -84,7 +84,7 @@ export class DutyService {
   }
 
   /** DELETE: delete the duty from the server */
-  deleteHero (duty: Duty | number): Observable<Duty> {
+  deleteDuty (duty: Duty | number): Observable<Duty> {
     const id = typeof duty === 'number' ? duty : duty.id;
     const url = `${this.dutiesUrl}/${id}`;
 
