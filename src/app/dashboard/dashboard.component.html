@@ -1,0 +1,9 @@
+<h3>Top Duties</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let duty of duties" class="col-1-4"
+      routerLink="/detail/{{duty.id}}">
+    <div class="module duty">
+      <h4>{{duty.name}}</h4>
+    </div>
+  </a>
+</div>
