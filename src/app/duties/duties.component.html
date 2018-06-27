@@ -1,9 +1,22 @@
 <h2>My Duties</h2>
+
+<div>
+  <label>Duty name:
+    <input #dutyName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(dutyName.value); dutyName.value=''">
+    add
+  </button>
+</div>
+
 <ul class="duties">
   <li *ngFor="let duty of duties"
     [class.selected]="duty === selectedDuty"
     (click)="onSelect(duty)">
     <span class="badge">{{duty.id}}</span> {{duty.name}}
+    <button class="delete" title="delete duty"
+      (click)="delete(duty)">x</button>
   </li>
 </ul>
 

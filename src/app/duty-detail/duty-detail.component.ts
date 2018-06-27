@@ -34,4 +34,9 @@ export class DutyDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+   this.dutyService.updateDuty(this.duty)
+     .subscribe(() => this.goBack());
+ }
+
 }

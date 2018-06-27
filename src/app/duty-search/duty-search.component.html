@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Duty Search</h4>
+ 
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+ 
+  <ul class="search-result">
+    <li *ngFor="let duty of duties$ | async" >
+      <a routerLink="/detail/{{duty.id}}">
+        {{duty.name}}
+      </a>
+    </li>
+  </ul>
+</div>
